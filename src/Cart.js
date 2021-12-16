@@ -2,12 +2,12 @@
 import CartItem from "./CartItem"
 import { useGlobalContext } from "./context"
 const Cart = () => {
-const { cartArray, clearCart, totalFunction } = useGlobalContext()
+const { cart, clearCart, totalFunction } = useGlobalContext()
   return (
     <div className="cart">
       <h2>Your Cart</h2>
       <div className="cart-items">
-        {cartArray.map((item, index) => {
+        {cart.map((item, index) => {
           return <CartItem key={index} item={item} />
         })}
       </div>
