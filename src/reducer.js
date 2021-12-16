@@ -19,6 +19,10 @@ const reducer = (state, action) => {
       })}
     case "cart-count":
       return {...state,amount:state.cart.reduce((total, item) => total + item.amount, 0)}
+    case "LOADING":
+      return {...state,loading:true}
+    case "DISPLAY_ITEMS":
+      return {...state,loading:false,cart:action.payload}
     default:
       return state
   }
